@@ -1,0 +1,9 @@
+source http://nuget.org/api/v2
+
+nuget Paket 
+nuget Machine.Fakes >= 2.4.0
+nuget Machine.Fakes.RhinoMocks >= 2.4.0
+nuget Machine.Specifications >= 0.8.3
+nuget Machine.Specifications.Should >= 0.7.2
+nuget RhinoMocks >= 3.6.1
+nuget System.Data.SQLite.Core >= 1.0.93.0

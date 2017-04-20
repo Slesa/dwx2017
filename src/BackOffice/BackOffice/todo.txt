@@ -1,0 +1,5 @@
+Domain, DomainEntity -> Domain.Common
+Domain, ValueObject -> Domain.Common
+Specs/Domain -> Domain.Common.Specs
+
+*.xaml, TextBox -> <i:Interaction.Behaviors><Behaviors:SelectAllOnFocusBehavior /></i:Interaction.Behaviors>
