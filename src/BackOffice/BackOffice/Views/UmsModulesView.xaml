@@ -1,29 +1,21 @@
-﻿<UserControl
-    x:Class="BackOffice.Views.UmsModulesView"
+﻿<UserControl x:Class="BackOffice.Views.UmsModulesView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:common="clr-namespace:Poseidon.BackOffice.Common;assembly=Poseidon.BackOffice.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
-    xmlns:Controls="clr-namespace:Poseidon.BackOffice.Common.Controls;assembly=Poseidon.BackOffice.Common"
-             xmlns:lex="http://wpflocalizeextension.codeplex.com"
-             lex:LocalizeDictionary.DesignCulture="en"
-             lex:ResxLocalizationProvider.DefaultAssembly="Poseidon.BackOffice.Module.Ums"
-             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
+    mc:Ignorable="d" 
     d:DesignHeight="300"
     d:DesignWidth="300"
-    mc:Ignorable="d">
+    DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <UserControl.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
+            <!--<ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml" />
-            </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary.MergedDictionaries>-->
 
-            <ums:UmsModulesViewModelLocator x:Key="ModulesViewModel" />
+            <!--<ums:UmsModulesViewModelLocator x:Key="ModulesViewModel" />-->
 
             <Style x:Key="GroupItem.Module" TargetType="{x:Type GroupItem}">
                 <Setter Property="Template">
@@ -39,7 +31,7 @@
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
                                 <!--  <Image Grid.ColumnSpan="2" Width="48" Height="48" Source="{Binding Parent.Image, RelativeSource={RelativeSource FindAncestor,}}}" />  -->
-                                <TextBlock x:Name="parentName" Grid.Column="1" FontSize="20" Foreground="CornflowerBlue" Text="{Binding Path=Name}" /> 
+                                <TextBlock x:Name="parentName" Grid.Column="1" FontSize="20" Foreground="CornflowerBlue" Text="{Binding Path=Name}" />
                                 <ItemsControl Grid.Row="1" Grid.Column="1">
                                     <!--
                                         ItemsControl.ItemsPanel>
@@ -56,7 +48,7 @@
                 </Setter>
             </Style>
 
-            <DataTemplate x:Key="ItemTemplate.Module" DataType="{x:Type common:IOfficeModule}">
+            <!--<DataTemplate x:Key="ItemTemplate.Module" DataType="{x:Type common:IOfficeModule}">
                 <Controls:ModuleButton 
                     Command="{Binding SelectedCommand}"
                     Content="{Binding Title}"
@@ -65,28 +57,28 @@
                     IconSize="24"
                     TitleFontWeight="Bold"
                     ToolTip="{Binding ToolTip}" />
-            </DataTemplate>
+            </DataTemplate>-->
         </ResourceDictionary>
 
     </UserControl.Resources>
 
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource ModulesViewModel}" />
-    </UserControl.DataContext>
-    <d:UserControl.DataContext>
+    </UserControl.DataContext>-->
+    <!--<d:UserControl.DataContext>
         <design:DesignTimeUmsModulesViewModel />
-    </d:UserControl.DataContext>
+    </d:UserControl.DataContext>-->
 
     <Grid>
 
-        <Grid.ColumnDefinitions>
+        <!--<Grid.ColumnDefinitions>
             <ColumnDefinition
                 Width="Auto" />
             <ColumnDefinition
                 Width="*" />
-        </Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>-->
 
-        <DockPanel>
+        <!--<DockPanel>
             <Controls:ModuleInfoArea 
                 Content="{lex:Loc UmsOfficeModule}"
                 Description="{lex:Loc UmsOfficeModule_Description}"
@@ -95,10 +87,11 @@
                 IconFile="{StaticResource Image.UmsModule}"
                 IconSize="48"
                 TitleFontSize="24"/>
-        </DockPanel>
+        </DockPanel>-->
 
+        <ListBox x:Name="_selectionView" ItemsSource="{Binding UmsModulesCollection}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" />
         <!--  <ListBox ItemsSource="{Binding Source={StaticResource ModulesCollection}}" ItemTemplate="{StaticResource ItemTemplate.Module}">  -->
-        <ListBox Grid.Column="1" ItemTemplate="{StaticResource ItemTemplate.Module}" ItemsSource="{Binding ModulesCollection}">
+        <!--<ListBox Grid.Column="1" ItemTemplate="{StaticResource ItemTemplate.Module}" ItemsSource="{Binding ModulesCollection}">
             <ListBox.GroupStyle>
                 <GroupStyle>
                     <GroupStyle.ContainerStyle>
@@ -114,8 +107,9 @@
                     </GroupStyle.Panel>
                 </GroupStyle>
             </ListBox.GroupStyle>
-        </ListBox>
+        </ListBox>-->
 
     </Grid>
 
 </UserControl>
+

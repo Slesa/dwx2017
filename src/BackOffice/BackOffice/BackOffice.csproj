@@ -50,11 +50,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers\DelegateCommand.cs" />
+    <Compile Include="Models\OfficeModule.cs" />
+    <Compile Include="Resources\IconResources.cs" />
     <Compile Include="Views\EditUserRoleView.xaml.cs">
       <DependentUpon>EditUserRoleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EditUserView.xaml.cs">
       <DependentUpon>EditUserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ModulesView.xaml.cs">
+      <DependentUpon>ModulesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PmsModulesView.xaml.cs">
+      <DependentUpon>PmsModulesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TokensView.xaml.cs">
       <DependentUpon>TokensView.xaml</DependentUpon>
@@ -82,6 +91,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\ResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EditUserRoleView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,6 +102,14 @@
     <Page Include="Views\EditUserView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ModulesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PmsModulesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TokensView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -143,9 +164,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Token.png" />
+    <Resource Include="Resources\Ums.png" />
+    <Resource Include="Resources\User.png" />
+    <Resource Include="Resources\UserRole.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="todo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Pms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Discount.png" />
+    <Resource Include="Resources\Payform.png" />
+    <Resource Include="Resources\SalesFamily.png" />
+    <Resource Include="Resources\SalesFamilyGroup.png" />
+    <Resource Include="Resources\SalesItem.png" />
+    <Resource Include="Resources\Waiter.png" />
+    <Resource Include="Resources\WaiterTeam.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

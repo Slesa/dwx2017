@@ -3,15 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:design="clr-namespace:Poseidon.BackOffice.Module.Ums.DesignTime"
-             xmlns:ums="clr-namespace:Poseidon.BackOffice.Module.Ums"
-             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-             xmlns:ei="clr-namespace:Microsoft.Expression.Interactivity.Input;assembly=Microsoft.Expression.Interactions"
-             xmlns:Behaviors="clr-namespace:Poseidon.Common.Wpf.Behaviors;assembly=Poseidon.Common.Wpf"
              xmlns:lex="http://wpflocalizeextension.codeplex.com"
-             lex:LocalizeDictionary.DesignCulture="en"
-             lex:ResxLocalizationProvider.DefaultAssembly="Poseidon.BackOffice.Module.Ums"
-             lex:ResxLocalizationProvider.DefaultDictionary="Strings"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
@@ -22,7 +14,7 @@
                 <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-            <ums:EditUserViewModelLocator x:Key="EditUserViewModel" />
+            <!--<ums:EditUserViewModelLocator x:Key="EditUserViewModel" />-->
 
             <Style x:Key="LayoutRoot" TargetType="Grid">
                 <Style.Triggers>
@@ -38,9 +30,9 @@
     <UserControl.DataContext>
         <Binding Path="ViewModel" Source="{StaticResource EditUserViewModel}" />
     </UserControl.DataContext>
-    <d:UserControl.DataContext>
+    <!--<d:UserControl.DataContext>
         <design:DesignTimeEditUserViewModel />
-    </d:UserControl.DataContext>
+    </d:UserControl.DataContext>-->
 
     <Grid Style="{StaticResource LayoutRoot}">
 
@@ -61,17 +53,17 @@
             <TextBlock VerticalAlignment="Center" FontSize="24" Text="{Binding TitleText}"/>
         </StackPanel>
 
-        <Label Grid.Row="1" Grid.Column="0" Target="{Binding ElementName=_textName}"  Content="{lex:Loc EditUserView_Name}"/>
+        <Label Grid.Row="1" Grid.Column="0" Target="{Binding ElementName=_textName}"  Content="_Name:"/>
         <TextBox Grid.Row="1" Grid.Column="1" x:Name="_textName" 
                  HorizontalAlignment="Stretch"
                  Text="{Binding Path=Name, ValidatesOnDataErrors=true, UpdateSourceTrigger=PropertyChanged}"
                  ToolTip="{Binding ElementName=_textName, Path=(Validation.Errors).CurrentItem}">
-            <i:Interaction.Behaviors>
+            <!--<i:Interaction.Behaviors>
                 <Behaviors:SelectAllOnFocusBehavior />
-            </i:Interaction.Behaviors>
+            </i:Interaction.Behaviors>-->
         </TextBox>
 
-        <Label Grid.Row="2" Grid.Column="0" Target="{Binding ElementName=_comboUserRole}" Content="{lex:Loc EditUserView_UserRole}"/>
+        <Label Grid.Row="2" Grid.Column="0" Target="{Binding ElementName=_comboUserRole}" Content="User _role:"/>
         <ComboBox Grid.Row="2" Grid.Column="1" Name="_comboUserRole" Style="{DynamicResource EditDialogComboBoxSkin}" 
                   ItemsSource="{Binding Path=AllUserRoles}" DisplayMemberPath="Name" 
                   SelectedItem="{Binding UserRole, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"

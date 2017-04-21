@@ -2,4 +2,9 @@ Domain, DomainEntity -> Domain.Common
 Domain, ValueObject -> Domain.Common
 Specs/Domain -> Domain.Common.Specs
 
+Common.Wpf -> Behaviors: MouseDoubleClickBehavior, SelectAllOnFocusBehavior, SelectItemsBehavior
+Common.Wpf -> Helpers: WeakEventHandler
+Common.Wpf -> Adorners: WatermarkAdorner
+
+
 *.xaml, TextBox -> <i:Interaction.Behaviors><Behaviors:SelectAllOnFocusBehavior /></i:Interaction.Behaviors>
