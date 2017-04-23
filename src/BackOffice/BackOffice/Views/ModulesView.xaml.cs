@@ -15,6 +15,7 @@ namespace BackOffice.Views
         {
             InitializeComponent();
             _umsView.CloseMe += CloseView;
+            _pmsView.CloseMe += CloseView;
         }
 
         ObservableCollection<OfficeModule> _modulesCollection;
@@ -39,7 +40,7 @@ namespace BackOffice.Views
                 {
                     Title = "User Management",
                     Tooltip = "Manage users of the system, edit their profiles and their rights",
-                    IconFileName = IconResources.UmsIcon,
+                    IconFile = IconResources.UmsIcon,
                     Command = new DelegateCommand(_ => ShowUmsView())
                 };
             yield return
@@ -47,7 +48,7 @@ namespace BackOffice.Views
                 {
                     Title = "POS Management",
                     Tooltip = "Manage articles, families, payforms and discounts",
-                    IconFileName = IconResources.PmsIcon,
+                    IconFile = IconResources.PmsIcon,
                     Command = new DelegateCommand(_ => ShowPmsView())
                 };
         }
@@ -57,6 +58,7 @@ namespace BackOffice.Views
             var view = sender as UserControl;
             view.Visibility = Visibility.Hidden;
             _selectionView.Visibility = Visibility.Visible;
+            _selectionView.SelectedItem = null;
         }
 
         private void ShowUmsView()
@@ -69,6 +71,13 @@ namespace BackOffice.Views
         {
             _pmsView.Visibility = Visibility.Visible;
             _selectionView.Visibility = Visibility.Hidden;
+        }
+
+        private void _selectionView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listbox = sender as ListBox;
+            var module = listbox?.SelectedItem as OfficeModule;
+            module?.Command.Execute(null);
         }
     }
 }

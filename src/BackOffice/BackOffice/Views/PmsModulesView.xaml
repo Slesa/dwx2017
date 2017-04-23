@@ -5,8 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:BackOffice.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}">
     <Grid>
-            
+
+        <ListBox x:Name="_selectionView"
+                 ItemsSource="{Binding PmsModulesCollection}" Style="{StaticResource SelectionBox}"
+                 SelectionChanged="_selectionView_OnSelectionChanged" />
+        <local:DiscountsView x:Name="_discountsView" Visibility="Hidden" />
+        <local:PayformsView x:Name="_payformsView" Visibility="Hidden" />
+        <local:SalesItemsView x:Name="_salesItemsView" Visibility="Hidden" />
+        <local:SalesFamiliesView x:Name="_salesFamiliesView" Visibility="Hidden" />
+        <local:SalesFamilyGroupsView x:Name="_salesFamilyGroupsView" Visibility="Hidden" />
+
     </Grid>
+
 </UserControl>

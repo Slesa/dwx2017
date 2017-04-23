@@ -5,8 +5,14 @@
     <ItemsPanelTemplate x:Key="ModuleListPanelTemplate">
         <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
     </ItemsPanelTemplate>
+    
+    <Style TargetType="{x:Type ListBox}" x:Key="SelectionBox">
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ItemsPanel" Value="{StaticResource ModuleListPanelTemplate}" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+    </Style>
 
-    <Style TargetType="{x:Type Button}" x:Key="_buttonStyle">
+    <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">
         <Setter Property="Margin" Value="10" />
         <Setter Property="Template">
             <Setter.Value>
@@ -17,6 +23,8 @@
                                    Height="48"
                                    Margin="2"
                                    Source="{TemplateBinding Tag}" />
+                                   <!--Source="{TemplateBinding Tag}" />-->
+                        <!--Source="pack://application:,,,/BackOffice;component/Resources/Ums.png" />-->
                         <TextBlock 
                                    Text="{TemplateBinding Content}" />
                     </StackPanel>
@@ -27,7 +35,7 @@
     </Style>
 
     <DataTemplate DataType="{x:Type Models:OfficeModule}">
-        <Button Style="{StaticResource _buttonStyle}" Content="{Binding Title}" ToolTip="{Binding Tooltip}" Tag="{Binding IconFileName}" Command="{Binding Command}" />
+        <Button Style="{StaticResource ButtonStyle}" Content="{Binding Title}" ToolTip="{Binding Tooltip}" Tag="{Binding IconFile}" />
     </DataTemplate>
 
 </ResourceDictionary>

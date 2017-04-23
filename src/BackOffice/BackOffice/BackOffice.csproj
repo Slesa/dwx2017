@@ -53,6 +53,24 @@
     <Compile Include="Helpers\DelegateCommand.cs" />
     <Compile Include="Models\OfficeModule.cs" />
     <Compile Include="Resources\IconResources.cs" />
+    <Compile Include="Views\DiscountsView.xaml.cs">
+      <DependentUpon>DiscountsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditDiscountView.xaml.cs">
+      <DependentUpon>EditDiscountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditPayformView.xaml.cs">
+      <DependentUpon>EditPayformView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditSalesFamilyGroupView.xaml.cs">
+      <DependentUpon>EditSalesFamilyGroupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditSalesFamilyView.xaml.cs">
+      <DependentUpon>EditSalesFamilyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditSalesItemView.xaml.cs">
+      <DependentUpon>EditSalesItemView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EditUserRoleView.xaml.cs">
       <DependentUpon>EditUserRoleView.xaml</DependentUpon>
     </Compile>
@@ -62,8 +80,20 @@
     <Compile Include="Views\ModulesView.xaml.cs">
       <DependentUpon>ModulesView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PayformsView.xaml.cs">
+      <DependentUpon>PayformsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PmsModulesView.xaml.cs">
       <DependentUpon>PmsModulesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesFamiliesView.xaml.cs">
+      <DependentUpon>SalesFamiliesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesFamilyGroupsView.xaml.cs">
+      <DependentUpon>SalesFamilyGroupsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesItemsView.xaml.cs">
+      <DependentUpon>SalesItemsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TokensView.xaml.cs">
       <DependentUpon>TokensView.xaml</DependentUpon>
@@ -95,6 +125,30 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\DiscountsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditDiscountView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditPayformView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditSalesFamilyGroupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditSalesFamilyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditSalesItemView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\EditUserRoleView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -107,9 +161,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\PayformsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\PmsModulesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SalesFamiliesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SalesFamilyGroupsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SalesItemsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\TokensView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -155,6 +225,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="paket.references" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -184,6 +255,9 @@
     <Resource Include="Resources\SalesItem.png" />
     <Resource Include="Resources\Waiter.png" />
     <Resource Include="Resources\WaiterTeam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\back.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

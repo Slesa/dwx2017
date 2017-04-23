@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="BackOffice.Views.UsersView"
+﻿<UserControl x:Class="BackOffice.Views.SalesFamiliesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -11,15 +11,15 @@
     <UserControl.Resources>
         <ResourceDictionary>
 
-            <DataTemplate x:Key="ItemTemplate.User">
+            <DataTemplate x:Key="ItemTemplate.SalesFamily">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
-                    <TextBlock VerticalAlignment="Center" Text="{Binding UserRole.Name}"/>
                 </StackPanel>
             </DataTemplate>
 
         </ResourceDictionary>
     </UserControl.Resources>
+
 
     <Grid>
         <Grid x:Name="_listView">
@@ -33,53 +33,52 @@
 
                 <DockPanel DockPanel.Dock="Bottom" Style="{DynamicResource Style.ModuleInfo.Commands}" LastChildFill="False">
                     <Button DockPanel.Dock="Top" 
-                        Content="Add" ToolTip="Add new user..." Command="{Binding AddNewUserCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Add}" />
+                        Content="Add" ToolTip="Add new user role..." Command="{Binding AddNewSalesFamilyCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Add}" />
                     <Button DockPanel.Dock="Top" 
-                        Content="Edit" ToolTip="Edit user..." Command="{Binding EditUserCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Edit}" />
+                        Content="Edit" ToolTip="Edit user role..." Command="{Binding EditSalesFamilyCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Edit}" />
                     <Button DockPanel.Dock="Top" 
-                        Content="Remove"  ToolTip="Remove user" Command="{Binding RemoveUserCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Remove}" />
+                        Content="Remove" ToolTip="Remove user role" Command="{Binding RemoveSalesFamilyCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Remove}" />
                     <Button DockPanel.Dock="Bottom" 
-                        Content="Back" ToolTip="Back to users menu" Command="{Binding BackToUsersCommand}" />
+                        Content="Back" ToolTip="Back to users menu" Command="{Binding GoBackCommand}" />
                 </DockPanel>
 
                 <!--<Controls:ModuleInfoArea
-                Content="{lex:Loc UserModule}"
-                Description="{lex:Loc UserModule_Description}"
+                Content="{lex:Loc SalesFamilyModule}"
+                Description="{lex:Loc SalesFamilyModule_Description}"
                 DockPanel.Dock="Top"
-                IconFile="{StaticResource Image.User}"/>-->
+                IconFile="{StaticResource Image.SalesFamily}"/>-->
 
             </DockPanel>
 
-            <ListView Grid.Column="1" ItemsSource="{Binding Users}" ItemTemplate="{StaticResource ItemTemplate.User}" SelectionMode="Extended">
+            <ListView Grid.Column="1" ItemsSource="{Binding SalesFamilies}" ItemTemplate="{StaticResource ItemTemplate.SalesFamily}" SelectionMode="Extended">
                 <!--<i:Interaction.Behaviors>
                 <behaviors:SelectedItemsBehavior Selections="{Binding SelectedItems}" />
-                <behaviors:MouseDoubleClickBehavior Command="{Binding EditUserCommand}" />
+                <behaviors:MouseDoubleClickBehavior Command="{Binding EditSalesFamilyCommand}" />
             </i:Interaction.Behaviors>-->
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
-                        <GridViewColumn Width="Auto" Header="User role" DisplayMemberBinding="{Binding UserRole.Name}" />
                     </GridView>
                 </ListView.View>
             </ListView>
-
         </Grid>
-
-        <Views:EditUserView x:Name="_editorView" Visibility="Hidden" />
-
+        
+        <Views:EditSalesFamilyView x:Name="_editorView" Visibility="Hidden" />
+        
     </Grid>
 
     <!-- @@@
     <i:Interaction.Triggers>
         <ei:KeyTrigger Key="Insert">
-            <i:InvokeCommandAction Command="{Binding AddNewUserCommand}" />
+            <i:InvokeCommandAction Command="{Binding AddNewSalesFamilyCommand}" />
         </ei:KeyTrigger>
         <ei:KeyTrigger Key="Return">
-            <i:InvokeCommandAction Command="{Binding EditUserCommand}" />
+            <i:InvokeCommandAction Command="{Binding EditSalesFamilyCommand}" />
         </ei:KeyTrigger>
         <ei:KeyTrigger Key="Delete">
-            <i:InvokeCommandAction Command="{Binding RemoveUserCommand}" />
+            <i:InvokeCommandAction Command="{Binding RemoveSalesFamilyCommand}" />
         </ei:KeyTrigger>
     </i:Interaction.Triggers>
 -->
+
 </UserControl>

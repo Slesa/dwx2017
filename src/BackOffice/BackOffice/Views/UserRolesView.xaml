@@ -2,21 +2,16 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Views="clr-namespace:BackOffice.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <UserControl.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
 
-            <!--<ums:UserRolesViewModelLocator x:Key="UserRolesViewModel" />-->
-
-           <DataTemplate x:Key="ItemTemplate.UserRole">
+            <DataTemplate x:Key="ItemTemplate.UserRole">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
                 </StackPanel>
@@ -26,50 +21,53 @@
     </UserControl.Resources>
 
 
-    <UserControl.DataContext>
-        <Binding Path="ViewModel" Source="{StaticResource UserRolesViewModel}" />
-    </UserControl.DataContext>
-    <!--<d:UserControl.DataContext>
-        <design:DesignTimeUserRolesViewModel />
-    </d:UserControl.DataContext>-->
-
     <Grid>
+        <Grid x:Name="_listView">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <DockPanel>
+            <DockPanel>
 
-            <StackPanel DockPanel.Dock="Bottom" Style="{DynamicResource Style.ModuleInfo.Commands}">
-                <Button ToolTip="Add new user role..." Command="{Binding AddNewUserRoleCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Add}" />
-                <Button ToolTip="Edit user role..." Command="{Binding EditUserRoleCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Edit}" />
-                <Button ToolTip="Remove user role" Command="{Binding RemoveUserRoleCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Remove}" />
-            </StackPanel>
+                <DockPanel DockPanel.Dock="Bottom" Style="{DynamicResource Style.ModuleInfo.Commands}" LastChildFill="False">
+                    <Button DockPanel.Dock="Top" 
+                        Content="Add" ToolTip="Add new user role..." Command="{Binding AddNewUserRoleCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Add}" />
+                    <Button DockPanel.Dock="Top" 
+                        Content="Edit" ToolTip="Edit user role..." Command="{Binding EditUserRoleCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Edit}" />
+                    <Button DockPanel.Dock="Top" 
+                        Content="Remove" ToolTip="Remove user role" Command="{Binding RemoveUserRoleCommand}" Style="{DynamicResource Style.ModuleInfo.Buttons.Remove}" />
+                    <Button DockPanel.Dock="Bottom" 
+                        Content="Back" ToolTip="Back to users menu" Command="{Binding BackToUsersCommand}" />
+                </DockPanel>
 
-            <!--<Controls:ModuleInfoArea
+                <!--<Controls:ModuleInfoArea
                 Content="{lex:Loc UserRoleModule}"
                 Description="{lex:Loc UserRoleModule_Description}"
                 DockPanel.Dock="Top"
                 IconFile="{StaticResource Image.UserRole}"/>-->
-            
-        </DockPanel>
 
-        <ListView Grid.Column="1" ItemsSource="{Binding UserRoles}" ItemTemplate="{StaticResource ItemTemplate.UserRole}" SelectionMode="Extended">
-            <!--<i:Interaction.Behaviors>
+            </DockPanel>
+
+            <ListView Grid.Column="1" ItemsSource="{Binding UserRoles}" ItemTemplate="{StaticResource ItemTemplate.UserRole}" SelectionMode="Extended">
+                <!--<i:Interaction.Behaviors>
                 <behaviors:SelectedItemsBehavior Selections="{Binding SelectedItems}" />
                 <behaviors:MouseDoubleClickBehavior Command="{Binding EditUserRoleCommand}" />
             </i:Interaction.Behaviors>-->
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        
+        <Views:EditUserRoleView x:Name="_editorView" Visibility="Hidden" />
+        
     </Grid>
 
-<!-- @@@
+    <!-- @@@
     <i:Interaction.Triggers>
         <ei:KeyTrigger Key="Insert">
             <i:InvokeCommandAction Command="{Binding AddNewUserRoleCommand}" />
@@ -82,5 +80,5 @@
         </ei:KeyTrigger>
     </i:Interaction.Triggers>
 -->
-    
+
 </UserControl>

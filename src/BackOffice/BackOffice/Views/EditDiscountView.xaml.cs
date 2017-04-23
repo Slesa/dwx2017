@@ -5,9 +5,9 @@ using BackOffice.Helpers;
 
 namespace BackOffice.Views
 {
-    public partial class EditUserRoleView : UserControl
+    public partial class EditDiscountView : UserControl
     {
-        public EditUserRoleView()
+        public EditDiscountView()
         {
             GoBackCommand = new DelegateCommand(_ => GoBack());
             InitializeComponent();

@@ -6,39 +6,39 @@ using BackOffice.Helpers;
 
 namespace BackOffice.Views
 {
-    public partial class UserRolesView : UserControl
+    public partial class SalesFamilyGroupsView : UserControl
     {
         public event EventHandler CloseMe;
 
-        public UserRolesView()
+        public SalesFamilyGroupsView()
         {
-            BackToUsersCommand = new DelegateCommand(_ => BackToUsers());
-            AddNewUserRoleCommand = new DelegateCommand(_ => AddNewUserRole());
-            EditUserRoleCommand = new DelegateCommand(_ => EditUserRole());
+            GoBackCommand = new DelegateCommand(_ => GoBack());
+            AddNewSalesFamilyGroupCommand = new DelegateCommand(_ => AddNewSalesFamilyGroup());
+            EditSalesFamilyGroupCommand = new DelegateCommand(_ => EditSalesFamilyGroup());
 
             InitializeComponent();
 
             _editorView.CloseMe += CloseView;
         }
 
-        public ICommand BackToUsersCommand { get; private set; }
+        public ICommand GoBackCommand { get; private set; }
 
-        private void BackToUsers()
+        private void GoBack()
         {
             CloseMe?.Invoke(this, EventArgs.Empty);
         }
 
-        public ICommand AddNewUserRoleCommand { get; private set; }
+        public ICommand AddNewSalesFamilyGroupCommand { get; private set; }
 
-        private void AddNewUserRole()
+        private void AddNewSalesFamilyGroup()
         {
             _editorView.Visibility =  Visibility.Visible;
             _listView.Visibility = Visibility.Hidden;
         }
 
-        public ICommand EditUserRoleCommand { get; private set; }
+        public ICommand EditSalesFamilyGroupCommand { get; private set; }
 
-        private void EditUserRole()
+        private void EditSalesFamilyGroup()
         {
             _editorView.Visibility =  Visibility.Visible;
             _listView.Visibility = Visibility.Hidden;

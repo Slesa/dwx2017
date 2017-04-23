@@ -3,18 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:lex="http://wpflocalizeextension.codeplex.com"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <UserControl.Resources>
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Poseidon.BackOffice.Theme;component/Resources/Style.ListView.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-
-            <!--<ums:TokensViewModelLocator x:Key="TokensViewModel" />-->
 
             <DataTemplate x:Key="ItemTemplate.Token">
                 <StackPanel Orientation="Horizontal">
@@ -25,13 +19,6 @@
 
         </ResourceDictionary>
     </UserControl.Resources>
-
-    <!--<UserControl.DataContext>
-        <Binding Path="ViewModel" Source="{StaticResource TokensViewModel}" />
-    </UserControl.DataContext>-->
-    <!--<d:UserControl.DataContext >
-        <design:DesignTimeTokensViewModel />
-    </d:UserControl.DataContext>-->
 
     <Grid>
 

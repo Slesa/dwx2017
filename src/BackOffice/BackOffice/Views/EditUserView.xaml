@@ -3,18 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:lex="http://wpflocalizeextension.codeplex.com"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <UserControl.Resources>
         <ResourceDictionary>
-            
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Poseidon.Ums.Domain.Resources;component/UmsResources.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-
-            <!--<ums:EditUserViewModelLocator x:Key="EditUserViewModel" />-->
 
             <Style x:Key="LayoutRoot" TargetType="Grid">
                 <Style.Triggers>
@@ -23,16 +17,10 @@
                     </Trigger>
                 </Style.Triggers>
             </Style>
-            
+
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <UserControl.DataContext>
-        <Binding Path="ViewModel" Source="{StaticResource EditUserViewModel}" />
-    </UserControl.DataContext>
-    <!--<d:UserControl.DataContext>
-        <design:DesignTimeEditUserViewModel />
-    </d:UserControl.DataContext>-->
 
     <Grid Style="{StaticResource LayoutRoot}">
 
@@ -49,7 +37,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Image Width="24" Height="24" Source="{StaticResource Image.User}"/>
+            <Image Width="24" Height="24" Source="{DynamicResource Image.User}"/>
             <TextBlock VerticalAlignment="Center" FontSize="24" Text="{Binding TitleText}"/>
         </StackPanel>
 
@@ -69,11 +57,20 @@
                   SelectedItem="{Binding UserRole, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
                   IsEditable="False" />
 
-        <Button Grid.ColumnSpan="3" Grid.Row="4" Command="{Binding CommitCommand}" Style="{DynamicResource Style.Edit.Buttons.Ok}" />
-        
+        <DockPanel Grid.Row="4" Grid.ColumnSpan="4" LastChildFill="False">
+            <Button 
+                DockPanel.Dock="Left"
+                Content="Back"
+                Command="{Binding GoBackCommand}" />
+            <Button 
+                DockPanel.Dock="Right"
+                Content="Ok"
+                Command="{Binding CommitCommand}"
+                Style="{DynamicResource Style.Edit.Buttons.Ok}" />
+        </DockPanel>
     </Grid>
 
-<!-- @@@
+    <!-- @@@
     <i:Interaction.Triggers>
         <ei:KeyTrigger Key="Enter" Modifiers="Control">
             <i:InvokeCommandAction Command="{Binding CommitCommand}" />

@@ -6,39 +6,39 @@ using BackOffice.Helpers;
 
 namespace BackOffice.Views
 {
-    public partial class UserRolesView : UserControl
+    public partial class DiscountsView : UserControl
     {
         public event EventHandler CloseMe;
 
-        public UserRolesView()
+        public DiscountsView()
         {
-            BackToUsersCommand = new DelegateCommand(_ => BackToUsers());
-            AddNewUserRoleCommand = new DelegateCommand(_ => AddNewUserRole());
-            EditUserRoleCommand = new DelegateCommand(_ => EditUserRole());
+            GoBackCommand = new DelegateCommand(_ => GoBack());
+            AddNewDiscountCommand = new DelegateCommand(_ => AddNewDiscount());
+            EditDiscountCommand = new DelegateCommand(_ => EditDiscount());
 
             InitializeComponent();
 
             _editorView.CloseMe += CloseView;
         }
 
-        public ICommand BackToUsersCommand { get; private set; }
+        public ICommand GoBackCommand { get; private set; }
 
-        private void BackToUsers()
+        private void GoBack()
         {
             CloseMe?.Invoke(this, EventArgs.Empty);
         }
 
-        public ICommand AddNewUserRoleCommand { get; private set; }
+        public ICommand AddNewDiscountCommand { get; private set; }
 
-        private void AddNewUserRole()
+        private void AddNewDiscount()
         {
             _editorView.Visibility =  Visibility.Visible;
             _listView.Visibility = Visibility.Hidden;
         }
 
-        public ICommand EditUserRoleCommand { get; private set; }
+        public ICommand EditDiscountCommand { get; private set; }
 
-        private void EditUserRole()
+        private void EditDiscount()
         {
             _editorView.Visibility =  Visibility.Visible;
             _listView.Visibility = Visibility.Hidden;
