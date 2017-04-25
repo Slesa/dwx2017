@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using BackOffice.Data;
 using BackOffice.Helpers;
+using BackOffice.Models;
 
 namespace BackOffice.Views
 {
@@ -16,10 +19,24 @@ namespace BackOffice.Views
             AddNewUserCommand = new DelegateCommand(_ => AddNewUser());
             EditUserCommand = new DelegateCommand(_ => EditUser());
 
+            Users = new ObservableCollection<User>();
+
             InitializeComponent();
 
             _editorView.CloseMe += CloseView;
         }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            foreach (var user in UserData.ReadUsers())
+            {
+                Users.Add(user);
+            }
+        }
+
+        public ObservableCollection<User> Users { get; private set; }
 
         public ICommand BackToUsersCommand { get; private set; }
 

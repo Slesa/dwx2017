@@ -4,7 +4,7 @@ namespace BackOffice.Domain
 {
     public class DomainEntity : IEquatable<DomainEntity>
     {
-	    private int _id;
+	    private long _id;
 
         protected DomainEntity()
         {
@@ -15,10 +15,10 @@ namespace BackOffice.Domain
             _id = id;
         }
 
-        public virtual int Id
+        public long Id
         {
             get { return _id; }
-            protected set { _id = value; }
+            set { _id = value; }
         }
 
         public virtual int Version { get; protected set; }

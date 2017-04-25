@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using BackOffice.Data;
 using BackOffice.Helpers;
+using BackOffice.Models;
 
 namespace BackOffice.Views
 {
@@ -16,10 +19,24 @@ namespace BackOffice.Views
             AddNewUserRoleCommand = new DelegateCommand(_ => AddNewUserRole());
             EditUserRoleCommand = new DelegateCommand(_ => EditUserRole());
 
+            UserRoles = new ObservableCollection<UserRole>();
+
             InitializeComponent();
 
             _editorView.CloseMe += CloseView;
         }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            foreach (var userRole in UserRoleData.ReadUserRoles())
+            {
+                UserRoles.Add(userRole);
+            }
+        }
+
+        public ObservableCollection<UserRole> UserRoles { get; private set; }
 
         public ICommand BackToUsersCommand { get; private set; }
 

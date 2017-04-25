@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:Views="clr-namespace:BackOffice.Views"
+             xmlns:Views="clr-namespace:BackOffice.Views" 
+             xmlns:Models="clr-namespace:BackOffice.Models"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              DataContext="{Binding RelativeSource={RelativeSource Self}}">
@@ -11,9 +12,11 @@
     <UserControl.Resources>
         <ResourceDictionary>
 
-            <DataTemplate x:Key="ItemTemplate.Discount">
+            <DataTemplate x:Key="ItemTemplate.Discount" DataType="{x:Type Models:Discount}">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center" Text="{Binding Name}"/>
+                    <TextBlock VerticalAlignment="Center" Text="{Binding Rate}"/>
+                    <!--<CheckBox VerticalAlignment="Center" Checked="{Binding }"-->
                 </StackPanel>
             </DataTemplate>
 
@@ -58,6 +61,28 @@
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="Rate" DisplayMemberBinding="{Binding Rate}" />
+                        <GridViewColumn Header="Abs." >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding IsAbsolute}" IsHitTestVisible="False" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Sale">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding UseForSale}" IsHitTestVisible="False" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Order">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                    <CheckBox IsChecked="{Binding UseForOrders}" IsHitTestVisible="False" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>

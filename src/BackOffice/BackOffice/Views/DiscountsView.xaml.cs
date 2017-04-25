@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using BackOffice.Data;
 using BackOffice.Helpers;
+using BackOffice.Models;
 
 namespace BackOffice.Views
 {
@@ -16,10 +19,24 @@ namespace BackOffice.Views
             AddNewDiscountCommand = new DelegateCommand(_ => AddNewDiscount());
             EditDiscountCommand = new DelegateCommand(_ => EditDiscount());
 
+            Discounts = new ObservableCollection<Discount>();
+
             InitializeComponent();
 
             _editorView.CloseMe += CloseView;
         }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            foreach (var discount in DiscountData.ReadDiscounts())
+            {
+                Discounts.Add(discount);
+            }
+        }
+
+        public ObservableCollection<Discount> Discounts { get; private set; }
 
         public ICommand GoBackCommand { get; private set; }
 
