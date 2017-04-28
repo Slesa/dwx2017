@@ -1,5 +1,5 @@
 ﻿using System;
-using BackOffice.Domain;
+using Domain.Common;
 using Machine.Specifications;
 
 namespace BackOffice.Specs.Domain

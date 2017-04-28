@@ -1,4 +1,4 @@
-﻿using BackOffice.Domain;
+﻿using Domain.Common;
 
 namespace BackOffice.Models
 {
