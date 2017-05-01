@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using BackOffice.Helpers;
 using BackOffice.Models;
+using BackOffice.Resources;
 
 namespace BackOffice.Views
 {
@@ -42,7 +43,7 @@ namespace BackOffice.Views
                 {
                     Title = "Back",
                     Tooltip = "Back to module selection",
-                    //IconFileName = IconResources.BackIcon,
+                    IconFile = IconResources.BackIcon,
                     Command = new DelegateCommand(_ => BackToModules())
                 };
             yield return
@@ -50,7 +51,7 @@ namespace BackOffice.Views
                 {
                     Title = "Users",
                     Tooltip = "Manage users and their rights",
-                    //IconFileName = IconResources.UserIcon,
+                    IconFile = IconResources.UserIcon,
                     Command = new DelegateCommand(_ => ShowUsersView())
                 };
             yield return
@@ -58,7 +59,7 @@ namespace BackOffice.Views
                 {
                     Title = "User roles",
                     Tooltip = "Manage user roles",
-                    //IconFileName = IconResources.UserRoleIcon,
+                    IconFile = IconResources.UserRoleIcon,
                     Command = new DelegateCommand(_ => ShowUserRolesView())
                 };
         }

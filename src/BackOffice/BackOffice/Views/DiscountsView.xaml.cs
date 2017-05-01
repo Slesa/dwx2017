@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -30,9 +31,12 @@ namespace BackOffice.Views
         {
             base.OnApplyTemplate();
 
-            foreach (var discount in DiscountData.ReadDiscounts())
+            if (!DesignerProperties.GetIsInDesignMode(this))
             {
-                Discounts.Add(discount);
+                foreach (var discount in DiscountData.ReadDiscounts())
+                {
+                    Discounts.Add(discount);
+                }
             }
         }
 

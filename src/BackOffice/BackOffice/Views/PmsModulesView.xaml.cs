@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using BackOffice.Helpers;
 using BackOffice.Models;
+using BackOffice.Resources;
 
 namespace BackOffice.Views
 {
@@ -48,7 +49,7 @@ namespace BackOffice.Views
                 {
                     Title = "Back",
                     Tooltip = "Back to module selection",
-                    //IconFileName = IconResources.BackIcon,
+                    IconFile = IconResources.BackIcon,
                     Command = new DelegateCommand(_ => BackToModules())
                 };
             yield return
@@ -56,7 +57,7 @@ namespace BackOffice.Views
                 {
                     Title = "Discounts",
                     Tooltip = "Manage discounts",
-                    //IconFileName = IconResources.DiscountIcon,
+                    IconFile = IconResources.DiscountIcon,
                     Command = new DelegateCommand(_ => ShowDiscountsView())
                 };
             yield return
@@ -64,7 +65,7 @@ namespace BackOffice.Views
                 {
                     Title = "Payforms",
                     Tooltip = "Manage payforms",
-                    //IconFileName = IconResources.UserRoleIcon,
+                    IconFile = IconResources.PayformIcon,
                     Command = new DelegateCommand(_ => ShowPayformsView())
                 };
             yield return
@@ -72,7 +73,7 @@ namespace BackOffice.Views
                 {
                     Title = "Sales Items",
                     Tooltip = "Manage sales items",
-                    //IconFileName = IconResources.UserRoleIcon,
+                    IconFile = IconResources.SalesItemIcon,
                     Command = new DelegateCommand(_ => ShowSalesItemsView())
                 };
             yield return
@@ -80,7 +81,7 @@ namespace BackOffice.Views
                 {
                     Title = "Sales Families",
                     Tooltip = "Manage sales families",
-                    //IconFileName = IconResources.UserRoleIcon,
+                    IconFile = IconResources.SalesFamilyIcon,
                     Command = new DelegateCommand(_ => ShowSalesFamiliesView())
                 };
             yield return
@@ -88,7 +89,7 @@ namespace BackOffice.Views
                 {
                     Title = "Sales Family Groups",
                     Tooltip = "Manage sales family groups",
-                    //IconFileName = IconResources.UserRoleIcon,
+                    IconFile = IconResources.SalesFamilyGroupIcon,
                     Command = new DelegateCommand(_ => ShowSalesFamilyGroupsView())
                 };
         }

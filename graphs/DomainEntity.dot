@@ -1,0 +1,25 @@
+digraph DomainEntity{
+rankdir=BT
+
+Target[label="Extract Domain Entity",shape=rectangle]
+
+DomainCommon[label="C# Classlib\nDomain.Common"]
+MoveDomain[label="Verschieben von \n BackOffice/Domain/*"]
+DomainNs[label="Refeactor \nAdjust NS"]
+DomainRefs[label="AddReference \n- BackOffice \n- BackOffice.specs"]
+
+SpecsCommon[label="C# Classlib\nDomain.Common.Specs"]
+MoveSpecs[label="Verschieben von \n BackOffice.Specs/Domain/*"]
+CopySpecs[label="BackOffice.Specs \nKopieren von paket.refs"]
+RunPaket[label="PowerCmd, Open Cmd\n.paket\paket install"]
+
+Target -> DomainCommon
+DomainCommon -> MoveDomain
+MoveDomain -> DomainNs
+MoveDomain -> DomainRefs
+
+Target -> SpecsCommon
+SpecsCommon -> MoveSpecs
+SpecsCommon -> CopySpecs
+CopySpecs-> RunPaket
+}

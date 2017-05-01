@@ -1,7 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:Models="clr-namespace:BackOffice.Models">
+                    xmlns:Models="clr-namespace:BackOffice.Models"
+                    xmlns:Helpers="clr-namespace:BackOffice.Helpers"
+                    xmlns:Converters="clr-namespace:BackOffice.Converters">
 
+    <Converters:DebugConverter x:Key="DebugConverter" />
+    
     <ItemsPanelTemplate x:Key="ModuleListPanelTemplate">
         <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
     </ItemsPanelTemplate>
@@ -17,16 +21,12 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <StackPanel Margin="3" Orientation="Vertical">
-                        <Image 
-                                   Width="48"
-                                   Height="48"
-                                   Margin="2"
-                                   Source="{TemplateBinding Tag}" />
+                    <StackPanel Orientation="Vertical">
+                        <Image Margin="3" Width="48" Height="48" 
+                            Source="{Binding IconFile}" />
                                    <!--Source="{TemplateBinding Tag}" />-->
                         <!--Source="pack://application:,,,/BackOffice;component/Resources/Ums.png" />-->
-                        <TextBlock 
-                                   Text="{TemplateBinding Content}" />
+                        <TextBlock Text="{TemplateBinding Content}" />
                     </StackPanel>
 
                 </ControlTemplate>
@@ -35,7 +35,9 @@
     </Style>
 
     <DataTemplate DataType="{x:Type Models:OfficeModule}">
-        <Button Style="{StaticResource ButtonStyle}" Content="{Binding Title}" ToolTip="{Binding Tooltip}" Tag="{Binding IconFile}" />
+        <Button Style="{StaticResource ButtonStyle}" Content="{Binding Title}" ToolTip="{Binding Tooltip}" 
+                Helpers:ButtonHelper.IconSource="{Binding IconFile, Converter={StaticResource DebugConverter}}"
+                Tag="{Binding IconFile, Converter={StaticResource DebugConverter}}"/>
     </DataTemplate>
 
 </ResourceDictionary>

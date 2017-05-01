@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -30,9 +31,12 @@ namespace BackOffice.Views
         {
             base.OnApplyTemplate();
 
-            foreach (var userRole in UserRoleData.ReadUserRoles())
+            if (!DesignerProperties.GetIsInDesignMode(this))
             {
-                UserRoles.Add(userRole);
+                foreach (var userRole in UserRoleData.ReadUserRoles())
+                {
+                    UserRoles.Add(userRole);
+                }
             }
         }
 

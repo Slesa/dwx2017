@@ -1,0 +1,21 @@
+digraph Prism{
+rankdir=BT
+
+Target[label="Prism",shape=doublecircle]
+BackOffice[label="BackOffice"]
+UnityExtensions[label="Prism.UnityExtensions"]
+Bootstrapper[label="Bootstrapper:\nUnityBootstrapper"]
+CreateShell[label="CreateShell\nreturn ServiceLocator\n.Current.GetInstance\n<MainWindow>()"]
+InitShell[label="InitializeShell\nApplication.Current.MainWindow = (Window) Shell;\nApplication.Current.MainWindow.Show();"]
+AppXaml[label="App.xaml, Startup=\nOnApplicationStartup"]
+AppStartup[label="OnAPplicationStartup\nvar bootstrapper = new Bootstrapper();\nbootstrapper.Run();"]
+
+Target -> BackOffice
+BackOffice -> UnityExtensions
+UnityExtensions -> Bootstrapper
+Bootstrapper -> CreateShell
+Bootstrapper -> InitShell
+
+UnityExtensions -> AppXaml
+AppXaml -> AppStartup
+}
