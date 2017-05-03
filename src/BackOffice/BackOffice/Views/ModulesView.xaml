@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:Models="clr-namespace:BackOffice.Models"
              xmlns:Views="clr-namespace:BackOffice.Views"
+             xmlns:Views1="clr-namespace:BackOffice.Module.Ums.Views;assembly=BackOffice.Module.Ums"
+             xmlns:Views2="clr-namespace:BackOffice.Module.Pms.Views;assembly=BackOffice.Module.Pms"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              DataContext="{Binding RelativeSource={RelativeSource Self}}">
@@ -13,8 +14,8 @@
     <Grid Margin="10">
         <ListBox x:Name="_selectionView" ItemsSource="{Binding ModulesCollection}" ItemsPanel="{StaticResource ModuleListPanelTemplate}" FocusVisualStyle="{x:Null}" SelectionChanged="_selectionView_OnSelectionChanged" />
         
-        <Views:UmsModulesView x:Name="_umsView" Visibility="Hidden" />
-        <Views:PmsModulesView x:Name="_pmsView" Visibility="Hidden" />
+        <Views1:UmsModulesView x:Name="_umsView" Visibility="Hidden" />
+        <Views2:PmsModulesView x:Name="_pmsView" Visibility="Hidden" />
     </Grid>
     
 </UserControl>

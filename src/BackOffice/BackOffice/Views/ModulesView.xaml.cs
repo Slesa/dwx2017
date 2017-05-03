@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using BackOffice.Common.Model;
+using BackOffice.Common.Resources;
 using BackOffice.Helpers;
-using BackOffice.Models;
-using BackOffice.Resources;
 
 namespace BackOffice.Views
 {

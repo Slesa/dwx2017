@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:BackOffice"
              Startup="OnApplicationStartup">
     <Application.Resources>
-         <ResourceDictionary Source="Resources/ResourceDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/BackOffice.Common;component/Resources/ResourceDictionary.xaml" />
     </Application.Resources>
 </Application>

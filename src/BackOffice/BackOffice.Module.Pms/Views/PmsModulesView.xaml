@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="BackOffice.Module.Pms.Views.PmsModulesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Views="clr-namespace:BackOffice.Module.Pms.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid>
+
+        <ListBox x:Name="_selectionView"
+                 ItemsSource="{Binding PmsModulesCollection}" Style="{StaticResource SelectionBox}"
+                 SelectionChanged="_selectionView_OnSelectionChanged" />
+        <Views:DiscountsView x:Name="_discountsView" Visibility="Hidden" />
+        <Views:PayformsView x:Name="_payformsView" Visibility="Hidden" />
+        <Views:SalesItemsView x:Name="_salesItemsView" Visibility="Hidden" />
+        <Views:SalesFamiliesView x:Name="_salesFamiliesView" Visibility="Hidden" />
+        <Views:SalesFamilyGroupsView x:Name="_salesFamilyGroupsView" Visibility="Hidden" />
+
+    </Grid>
+
+</UserControl>

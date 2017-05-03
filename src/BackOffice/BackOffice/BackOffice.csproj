@@ -45,20 +45,20 @@
       <HintPath>..\packages\Prism.Interactivity\lib\NET45\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Practices.Prism.Mvvm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.Mvvm.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Prism.Mvvm, Version=1.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Mvvm\lib\net45\Microsoft.Practices.Prism.Mvvm.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Practices.Prism.Mvvm.Desktop, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.Mvvm.Desktop.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Prism.Mvvm.Desktop, Version=1.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Mvvm\lib\net45\Microsoft.Practices.Prism.Mvvm.Desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Practices.Prism.PubSubEvents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Prism.PubSubEvents.1.0.0\lib\portable-sl4+wp7+windows8+net40\Microsoft.Practices.Prism.PubSubEvents.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Prism.PubSubEvents, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.PubSubEvents\lib\portable-sl5+windowsphone8+windows8+net40+wpa81\Microsoft.Practices.Prism.PubSubEvents.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Practices.Prism.SharedInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Prism.Mvvm.1.0.0\lib\net45\Microsoft.Practices.Prism.SharedInterfaces.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Prism.SharedInterfaces, Version=1.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Mvvm\lib\net45\Microsoft.Practices.Prism.SharedInterfaces.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.Prism.UnityExtensions, Version=5.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -99,68 +99,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Converters\DebugConverter.cs" />
-    <Compile Include="Data\DataAccess.cs" />
-    <Compile Include="Data\DiscountData.cs" />
-    <Compile Include="Data\UserData.cs" />
-    <Compile Include="Data\UserRoleData.cs" />
     <Compile Include="Helpers\ButtonHelper.cs" />
     <Compile Include="Helpers\DelegateCommand.cs" />
-    <Compile Include="Models\OfficeModule.cs" />
-    <Compile Include="Resources\IconResources.cs" />
-    <Compile Include="Views\DiscountsView.xaml.cs">
-      <DependentUpon>DiscountsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EditDiscountView.xaml.cs">
-      <DependentUpon>EditDiscountView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EditPayformView.xaml.cs">
-      <DependentUpon>EditPayformView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EditSalesFamilyGroupView.xaml.cs">
-      <DependentUpon>EditSalesFamilyGroupView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EditSalesFamilyView.xaml.cs">
-      <DependentUpon>EditSalesFamilyView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EditSalesItemView.xaml.cs">
-      <DependentUpon>EditSalesItemView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EditUserRoleView.xaml.cs">
-      <DependentUpon>EditUserRoleView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\EditUserView.xaml.cs">
-      <DependentUpon>EditUserView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ModulesView.xaml.cs">
       <DependentUpon>ModulesView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PayformsView.xaml.cs">
-      <DependentUpon>PayformsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PmsModulesView.xaml.cs">
-      <DependentUpon>PmsModulesView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SalesFamiliesView.xaml.cs">
-      <DependentUpon>SalesFamiliesView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SalesFamilyGroupsView.xaml.cs">
-      <DependentUpon>SalesFamilyGroupsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SalesItemsView.xaml.cs">
-      <DependentUpon>SalesItemsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TokensView.xaml.cs">
-      <DependentUpon>TokensView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\UmsModulesView.xaml.cs">
-      <DependentUpon>UmsModulesView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\UserRolesView.xaml.cs">
-      <DependentUpon>UserRolesView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\UsersView.xaml.cs">
-      <DependentUpon>UsersView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -174,93 +116,12 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Resources\ResourceDictionary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DiscountsView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\EditDiscountView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\EditPayformView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\EditSalesFamilyGroupView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\EditSalesFamilyView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\EditSalesItemView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\EditUserRoleView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\EditUserView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\ModulesView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\PayformsView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\PmsModulesView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\SalesFamiliesView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\SalesFamilyGroupsView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\SalesItemsView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\TokensView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\UmsModulesView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\UserRolesView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\UsersView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Discount.cs" />
-    <Compile Include="Models\Payform.cs" />
-    <Compile Include="Models\SalesFamily.cs" />
-    <Compile Include="Models\SalesFamilyGroup.cs" />
-    <Compile Include="Models\SalesItem.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Models\UserRole.cs" />
-    <Compile Include="Models\Waiter.cs" />
-    <Compile Include="Models\WaiterTeam.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -290,41 +151,27 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Token.png" />
-    <Resource Include="Resources\User.png" />
-    <Resource Include="Resources\UserRole.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="todo.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Discount.png" />
-    <Resource Include="Resources\Payform.png" />
-    <Resource Include="Resources\SalesFamily.png" />
-    <Resource Include="Resources\SalesFamilyGroup.png" />
-    <Resource Include="Resources\SalesItem.png" />
-    <Resource Include="Resources\Waiter.png" />
-    <Resource Include="Resources\WaiterTeam.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\back.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BackOffice.Theme\BackOffice.Theme.csproj">
-      <Project>{dc0a1c3c-18a5-46ec-80f9-db081d08a2ca}</Project>
-      <Name>BackOffice.Theme</Name>
+    <ProjectReference Include="..\BackOffice.Common\BackOffice.Common.csproj">
+      <Project>{3d3f819c-26a5-4312-9d7a-28fbca8cea52}</Project>
+      <Name>BackOffice.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackOffice.Module.Pms\BackOffice.Module.Pms.csproj">
+      <Project>{bc17dbd1-b43a-4112-ac44-d63650a1cd97}</Project>
+      <Name>BackOffice.Module.Pms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BackOffice.Module.Ums\BackOffice.Module.Ums.csproj">
+      <Project>{dfeaf692-7363-4579-b74e-c26486f7a207}</Project>
+      <Name>BackOffice.Module.Ums</Name>
     </ProjectReference>
     <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
       <Project>{78c68bc3-141e-46cd-bd8e-898314c05cd5}</Project>
       <Name>Domain.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Pms.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Ums.png" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v3.0' Or $(TargetFrameworkVersion) == 'v3.5')">
