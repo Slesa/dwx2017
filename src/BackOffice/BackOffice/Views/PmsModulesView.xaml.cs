@@ -19,9 +19,6 @@ namespace BackOffice.Views
             InitializeComponent();
             _discountsView.CloseMe += CloseView;
             _payformsView.CloseMe += CloseView;
-            _salesItemsView.CloseMe += CloseView;
-            _salesFamiliesView.CloseMe += CloseView;
-            _salesFamilyGroupsView.CloseMe += CloseView;
         }
 
         public event EventHandler CloseMe;
@@ -68,30 +65,6 @@ namespace BackOffice.Views
                     IconFile = IconResources.PayformIcon,
                     Command = new DelegateCommand(_ => ShowPayformsView())
                 };
-            yield return
-                new OfficeModule()
-                {
-                    Title = "Sales Items",
-                    Tooltip = "Manage sales items",
-                    IconFile = IconResources.SalesItemIcon,
-                    Command = new DelegateCommand(_ => ShowSalesItemsView())
-                };
-            yield return
-                new OfficeModule()
-                {
-                    Title = "Sales Families",
-                    Tooltip = "Manage sales families",
-                    IconFile = IconResources.SalesFamilyIcon,
-                    Command = new DelegateCommand(_ => ShowSalesFamiliesView())
-                };
-            yield return
-                new OfficeModule()
-                {
-                    Title = "Sales Family Groups",
-                    Tooltip = "Manage sales family groups",
-                    IconFile = IconResources.SalesFamilyGroupIcon,
-                    Command = new DelegateCommand(_ => ShowSalesFamilyGroupsView())
-                };
         }
 
 
@@ -112,24 +85,6 @@ namespace BackOffice.Views
         private void ShowPayformsView()
         {
             _payformsView.Visibility = Visibility.Visible;
-            _selectionView.Visibility = Visibility.Hidden;
-        }
-
-        private void ShowSalesItemsView()
-        {
-            _salesItemsView.Visibility = Visibility.Visible;
-            _selectionView.Visibility = Visibility.Hidden;
-        }
-
-        private void ShowSalesFamiliesView()
-        {
-            _salesFamiliesView.Visibility = Visibility.Visible;
-            _selectionView.Visibility = Visibility.Hidden;
-        }
-
-        private void ShowSalesFamilyGroupsView()
-        {
-            _salesFamilyGroupsView.Visibility = Visibility.Visible;
             _selectionView.Visibility = Visibility.Hidden;
         }
 
