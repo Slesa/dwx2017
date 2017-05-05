@@ -1,7 +1,6 @@
-﻿using BackOffice.Domain;
-using Machine.Specifications;
+﻿using Machine.Specifications;
 
-namespace BackOffice.Specs.Domain
+namespace Domain.Common.Specs
 {
     [Subject(typeof(ValueObject<>))]
     internal class When_comparing_value_objects_with_identical_values

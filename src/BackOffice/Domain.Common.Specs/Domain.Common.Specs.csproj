@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AD013420-8A42-4A47-A239-03B14371EDBA}</ProjectGuid>
+    <ProjectGuid>{45C5C24E-745A-4FF3-B248-0DB1709FFE28}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BackOffice.Specs</RootNamespace>
-    <AssemblyName>BackOffice.Specs</AssemblyName>
+    <RootNamespace>Domain.Common.Specs</RootNamespace>
+    <AssemblyName>Domain.Common.Specs</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,26 +32,26 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainEntitySpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BackOffice\BackOffice.csproj">
-      <Project>{d375c96c-f348-41f2-becc-0c6d6d43ab3b}</Project>
-      <Name>BackOffice</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
-      <Project>{d339b964-7d83-4388-993b-dd83c825e72f}</Project>
-      <Name>Domain.Common</Name>
-    </ProjectReference>
+    <Compile Include="ValuObjectSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="paket.references" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Domain\" />
+    <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
+      <Project>{d339b964-7d83-4388-993b-dd83c825e72f}</Project>
+      <Name>Domain.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -67,12 +67,6 @@
         <Reference Include="System.Runtime.Remoting">
           <Paket>True</Paket>
         </Reference>
-        <Reference Include="System.Xml">
-          <Paket>True</Paket>
-        </Reference>
-        <Reference Include="System.Xml.Linq">
-          <Paket>True</Paket>
-        </Reference>
         <Reference Include="Machine.Specifications">
           <HintPath>..\packages\Machine.Specifications\lib\net35\Machine.Specifications.dll</HintPath>
           <Private>True</Private>
@@ -85,12 +79,6 @@
         <Reference Include="System.Runtime.Remoting">
           <Paket>True</Paket>
         </Reference>
-        <Reference Include="System.Xml">
-          <Paket>True</Paket>
-        </Reference>
-        <Reference Include="System.Xml.Linq">
-          <Paket>True</Paket>
-        </Reference>
         <Reference Include="Machine.Specifications">
           <HintPath>..\packages\Machine.Specifications\lib\net40\Machine.Specifications.dll</HintPath>
           <Private>True</Private>
@@ -101,12 +89,6 @@
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7')">
       <ItemGroup>
         <Reference Include="System.Runtime.Remoting">
-          <Paket>True</Paket>
-        </Reference>
-        <Reference Include="System.Xml">
-          <Paket>True</Paket>
-        </Reference>
-        <Reference Include="System.Xml.Linq">
           <Paket>True</Paket>
         </Reference>
         <Reference Include="System.Xml.Serialization">

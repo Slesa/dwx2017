@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice", "BackOffice\BackOffice.csproj", "{D375C96C-F348-41F2-BECC-0C6D6D43AB3B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice.Specs", "BackOffice.Specs\BackOffice.Specs.csproj", "{AD013420-8A42-4A47-A239-03B14371EDBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Common", "Domain.Common\Domain.Common.csproj", "{D339B964-7D83-4388-993B-DD83C825E72F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Common.Specs", "Domain.Common.Specs\Domain.Common.Specs.csproj", "{45C5C24E-745A-4FF3-B248-0DB1709FFE28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{AD013420-8A42-4A47-A239-03B14371EDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD013420-8A42-4A47-A239-03B14371EDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD013420-8A42-4A47-A239-03B14371EDBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D339B964-7D83-4388-993B-DD83C825E72F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D339B964-7D83-4388-993B-DD83C825E72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D339B964-7D83-4388-993B-DD83C825E72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D339B964-7D83-4388-993B-DD83C825E72F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45C5C24E-745A-4FF3-B248-0DB1709FFE28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C5C24E-745A-4FF3-B248-0DB1709FFE28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C5C24E-745A-4FF3-B248-0DB1709FFE28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C5C24E-745A-4FF3-B248-0DB1709FFE28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace BackOffice.Domain
+namespace Domain.Common
 {
     public abstract class ValueObject<TValue> : IEquatable<TValue> where TValue : ValueObject<TValue>
     {

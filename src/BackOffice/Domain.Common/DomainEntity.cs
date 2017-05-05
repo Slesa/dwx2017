@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BackOffice.Domain
+namespace Domain.Common
 {
     public class DomainEntity : IEquatable<DomainEntity>
     {

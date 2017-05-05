@@ -1,8 +1,7 @@
 ﻿using System;
-using BackOffice.Domain;
 using Machine.Specifications;
 
-namespace BackOffice.Specs.Domain
+namespace Domain.Common.Specs
 {
     [Behaviors]
     internal class EntityInequality
