@@ -19,11 +19,11 @@
         // PMS
         //public static readonly string CurrencyIcon = @"/Poseidon.Pms.Domain.Resources;component/Currency.png";
         public static readonly string DiscountIcon = "/BackOffice;component/Resources/Discount.png";
-        public static readonly string PayformIcon = "/Poseidon.Pms.Domain.Resources;component/Payform.png";
-        public static readonly string SalesFamilyGroupIcon = "/Poseidon.Pms.Domain.Resources;component/SalesFamilyGroup.png";
-        public static readonly string SalesFamilyIcon = "/Poseidon.Pms.Domain.Resources;component/SalesFamily.png";
-        public static readonly string SalesItemIcon = "/Poseidon.Pms.Domain.Resources;component/SalesItem.png";
-        public static readonly string WaiterIcon = "/Poseidon.Pms.Domain.Resources;component/Waiter.png";
-        public static readonly string WaiterTeamIcon = "/Poseidon.Pms.Domain.Resources;component/WaiterTeam.png";
+        public static readonly string PayformIcon = "/BackOffice;component/Resources/Payform.png";
+        public static readonly string SalesFamilyGroupIcon = "/BackOffice;component/Resources/SalesFamilyGroup.png";
+        public static readonly string SalesFamilyIcon = "/BackOffice;component/Resources/SalesFamily.png";
+        public static readonly string SalesItemIcon = "/BackOffice;component/Resources/SalesItem.png";
+        public static readonly string WaiterIcon = "/BackOffice;component/Resources/Waiter.png";
+        public static readonly string WaiterTeamIcon = "/BackOffice;component/Resources/WaiterTeam.png";
     }
 }

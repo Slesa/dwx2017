@@ -18,11 +18,11 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <StackPanel Margin="3" Orientation="Vertical">
-                        <Image 
+                        <Image IsHitTestVisible="False"
                                    Width="48"
                                    Height="48"
                                    Margin="2"
-                                   Source="{TemplateBinding Tag}" />
+                                   Source="{Binding IconFile}" />
                                    <!--Source="{TemplateBinding Tag}" />-->
                         <!--Source="pack://application:,,,/BackOffice;component/Resources/Ums.png" />-->
                         <TextBlock 

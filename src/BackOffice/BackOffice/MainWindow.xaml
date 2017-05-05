@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BackOffice" 
         xmlns:Views="clr-namespace:BackOffice.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="BackOffice" Height="350" Width="525">
     <Grid>
         <Views:ModulesView />
     </Grid>
