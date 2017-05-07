@@ -14,6 +14,10 @@
                  SelectionChanged="_selectionView_OnSelectionChanged" />
         <local:DiscountsView x:Name="_discountsView" Visibility="Hidden" />
         <local:PayformsView x:Name="_payformsView" Visibility="Hidden" />
+        <local:SalesItemsView x:Name="_salesItemsView" Visibility="Hidden" />
+        <local:SalesFamiliesView x:Name="_salesFamiliesView" Visibility="Hidden" />
+        <local:SalesFamilyGroupsView x:Name="_salesFamilyGroupsView" Visibility="Hidden" />
+
     </Grid>
 
 </UserControl>
