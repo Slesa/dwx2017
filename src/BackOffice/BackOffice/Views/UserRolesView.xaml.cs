@@ -5,8 +5,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using BackOffice.Data;
-using BackOffice.Helpers;
 using BackOffice.Models;
+using Microsoft.Practices.Prism.Commands;
 
 namespace BackOffice.Views
 {
@@ -16,9 +16,9 @@ namespace BackOffice.Views
 
         public UserRolesView()
         {
-            BackToUsersCommand = new DelegateCommand(_ => BackToUsers());
-            AddNewUserRoleCommand = new DelegateCommand(_ => AddNewUserRole());
-            EditUserRoleCommand = new DelegateCommand(_ => EditUserRole());
+            BackToUsersCommand = new DelegateCommand(() => BackToUsers());
+            AddNewUserRoleCommand = new DelegateCommand(() => AddNewUserRole());
+            EditUserRoleCommand = new DelegateCommand(() => EditUserRole());
 
             UserRoles = new ObservableCollection<UserRole>();
 

@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using BackOffice.Helpers;
+using Microsoft.Practices.Prism.Commands;
 
 namespace BackOffice.Views
 {
@@ -12,9 +12,9 @@ namespace BackOffice.Views
 
         public PayformsView()
         {
-            GoBackCommand = new DelegateCommand(_ => GoBack());
-            AddNewPayformCommand = new DelegateCommand(_ => AddNewPayform());
-            EditPayformCommand = new DelegateCommand(_ => EditPayform());
+            GoBackCommand = new DelegateCommand(() => GoBack());
+            AddNewPayformCommand = new DelegateCommand(() => AddNewPayform());
+            EditPayformCommand = new DelegateCommand(() => EditPayform());
 
             InitializeComponent();
 

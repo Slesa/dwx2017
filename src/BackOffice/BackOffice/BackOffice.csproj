@@ -103,7 +103,6 @@
     <Compile Include="Data\DiscountData.cs" />
     <Compile Include="Data\UserData.cs" />
     <Compile Include="Data\UserRoleData.cs" />
-    <Compile Include="Helpers\DelegateCommand.cs" />
     <Compile Include="Models\OfficeModule.cs" />
     <Compile Include="Resources\IconResources.cs" />
     <Compile Include="Views\DiscountsView.xaml.cs">
@@ -267,17 +266,12 @@
     <Resource Include="Resources\back.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Domain.Common\Domain.Common.csproj">
       <Project>{d339b964-7d83-4388-993b-dd83c825e72f}</Project>
       <Name>Domain.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Domain\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v3.0' Or $(TargetFrameworkVersion) == 'v3.5')">

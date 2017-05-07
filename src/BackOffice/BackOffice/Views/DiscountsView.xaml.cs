@@ -5,8 +5,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using BackOffice.Data;
-using BackOffice.Helpers;
 using BackOffice.Models;
+using Microsoft.Practices.Prism.Commands;
 
 namespace BackOffice.Views
 {
@@ -16,9 +16,9 @@ namespace BackOffice.Views
 
         public DiscountsView()
         {
-            GoBackCommand = new DelegateCommand(_ => GoBack());
-            AddNewDiscountCommand = new DelegateCommand(_ => AddNewDiscount());
-            EditDiscountCommand = new DelegateCommand(_ => EditDiscount());
+            GoBackCommand = new DelegateCommand(() => GoBack());
+            AddNewDiscountCommand = new DelegateCommand(() => AddNewDiscount());
+            EditDiscountCommand = new DelegateCommand(() => EditDiscount());
 
             Discounts = new ObservableCollection<Discount>();
 

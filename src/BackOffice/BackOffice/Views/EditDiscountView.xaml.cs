@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Controls;
 using System.Windows.Input;
-using BackOffice.Helpers;
+using Microsoft.Practices.Prism.Commands;
 
 namespace BackOffice.Views
 {
@@ -9,7 +9,7 @@ namespace BackOffice.Views
     {
         public EditDiscountView()
         {
-            GoBackCommand = new DelegateCommand(_ => GoBack());
+            GoBackCommand = new DelegateCommand(() => GoBack());
             InitializeComponent();
         }
 

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using BackOffice.Helpers;
 using BackOffice.Models;
 using BackOffice.Resources;
+using Microsoft.Practices.Prism.Commands;
 
 namespace BackOffice.Views
 {
@@ -44,7 +44,7 @@ namespace BackOffice.Views
                     Title = "Back",
                     Tooltip = "Back to module selection",
                     IconFile = IconResources.BackIcon,
-                    Command = new DelegateCommand(_ => BackToModules())
+                    Command = new DelegateCommand(() => BackToModules())
                 };
             yield return
                 new OfficeModule()
@@ -52,7 +52,7 @@ namespace BackOffice.Views
                     Title = "Users",
                     Tooltip = "Manage users and their rights",
                     IconFile = IconResources.UserIcon,
-                    Command = new DelegateCommand(_ => ShowUsersView())
+                    Command = new DelegateCommand(() => ShowUsersView())
                 };
             yield return
                 new OfficeModule()
@@ -60,7 +60,7 @@ namespace BackOffice.Views
                     Title = "User roles",
                     Tooltip = "Manage user roles",
                     IconFile = IconResources.UserRoleIcon,
-                    Command = new DelegateCommand(_ => ShowUserRolesView())
+                    Command = new DelegateCommand(() => ShowUserRolesView())
                 };
         }
 

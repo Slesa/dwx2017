@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using BackOffice.Helpers;
 using BackOffice.Models;
 using BackOffice.Resources;
+using Microsoft.Practices.Prism.Commands;
 
 namespace BackOffice.Views
 {
@@ -47,7 +47,7 @@ namespace BackOffice.Views
                     Title = "Back",
                     Tooltip = "Back to module selection",
                     IconFile = IconResources.BackIcon,
-                    Command = new DelegateCommand(_ => BackToModules())
+                    Command = new DelegateCommand(() => BackToModules())
                 };
             yield return
                 new OfficeModule()
@@ -55,7 +55,7 @@ namespace BackOffice.Views
                     Title = "Discounts",
                     Tooltip = "Manage discounts",
                     IconFile = IconResources.DiscountIcon,
-                    Command = new DelegateCommand(_ => ShowDiscountsView())
+                    Command = new DelegateCommand(() => ShowDiscountsView())
                 };
             yield return
                 new OfficeModule()
@@ -63,7 +63,7 @@ namespace BackOffice.Views
                     Title = "Payforms",
                     Tooltip = "Manage payforms",
                     IconFile = IconResources.PayformIcon,
-                    Command = new DelegateCommand(_ => ShowPayformsView())
+                    Command = new DelegateCommand(() => ShowPayformsView())
                 };
         }
 
