@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using BackOffice.Models;
-using BackOffice.Resources;
+using BackOffice.Common.Models;
+using BackOffice.Common.Resources;
 using Microsoft.Practices.Prism.Commands;
 
 namespace BackOffice.Views

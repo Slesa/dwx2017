@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="BackOffice.Module.Pms.Views.EditSalesFamilyGroupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key="LayoutRoot" TargetType="Grid">
+                <Style.Triggers>
+                    <Trigger Property="UIElement.Visibility" Value="Visible">
+                        <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=_textName}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Style="{StaticResource LayoutRoot}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.ColumnSpan="3"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal">
+            <Image Width="24"
+                   Height="24"
+                   Source="{DynamicResource Image.SalesFamilyGroup}" />
+            <TextBlock VerticalAlignment="Center"
+                       FontSize="24"
+                       Text="{Binding TitleText}" />
+        </StackPanel>
+
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Content="Name:"
+               Target="{Binding ElementName=_textName}" />
+        <TextBox x:Name="_textName"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 Text="{Binding Path=Name,
+                                ValidatesOnDataErrors=true,
+                                UpdateSourceTrigger=PropertyChanged}"
+                 ToolTip="{Binding ElementName=_textName,
+                                   Path=(Validation.Errors).CurrentItem}">
+            <!--<i:Interaction.Behaviors>
+                <Behaviors:SelectAllOnFocusBehavior />
+            </i:Interaction.Behaviors>-->
+        </TextBox>
+
+        <DockPanel Grid.Row="3" Grid.ColumnSpan="3" LastChildFill="False">
+            <Button 
+                DockPanel.Dock="Left"
+                Content="Back"
+                Command="{Binding GoBackCommand}" />
+            <Button 
+                DockPanel.Dock="Right"
+                Content="Ok"
+                Command="{Binding CommitCommand}"
+                Style="{DynamicResource Style.Edit.Buttons.Ok}" />
+        </DockPanel>
+    </Grid>
+
+    <!-- @@@
+    <i:Interaction.Triggers>
+        <ei:KeyTrigger Key="Enter" Modifiers="Control">
+            <i:InvokeCommandAction Command="{Binding CommitCommand}" />
+        </ei:KeyTrigger>
+    </i:Interaction.Triggers>
+-->
+</UserControl>
