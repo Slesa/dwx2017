@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using BackOffice.Common;
 using BackOffice.Common.Models;
 using BackOffice.Common.Resources;
 using Microsoft.Practices.Prism.Commands;
+using Microsoft.Practices.ServiceLocation;
 
 namespace BackOffice.Views
 {
@@ -14,6 +17,9 @@ namespace BackOffice.Views
         public ModulesView()
         {
             InitializeComponent();
+
+            //var modules = ServiceLocator.Current.GetAllInstances<IOfficeModule>();
+            //var visibles = modules.Where(x => x.ParentType == null).OrderBy(x => x.Priority).ToObservableCollection();
             _umsView.CloseMe += CloseView;
             _pmsView.CloseMe += CloseView;
         }

@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using Microsoft.Practices.Prism.Modularity;
 using Microsoft.Practices.Prism.UnityExtensions;
 using Microsoft.Practices.ServiceLocation;
 
@@ -16,6 +17,11 @@ namespace BackOffice
             base.InitializeShell();
             Application.Current.MainWindow = (Window) Shell;
             Application.Current.MainWindow.Show();
+        }
+
+        protected override IModuleCatalog CreateModuleCatalog()
+        {
+            return new ModuleCatalog(ModuleLoader.CollectModules());
         }
     }
 }
