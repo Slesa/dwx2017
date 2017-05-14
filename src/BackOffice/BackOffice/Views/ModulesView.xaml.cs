@@ -9,6 +9,7 @@ using BackOffice.Common.Models;
 using BackOffice.Common.Resources;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.ServiceLocation;
+using Microsoft.Practices.Unity;
 
 namespace BackOffice.Views
 {
@@ -18,8 +19,6 @@ namespace BackOffice.Views
         {
             InitializeComponent();
 
-            //var modules = ServiceLocator.Current.GetAllInstances<IOfficeModule>();
-            //var visibles = modules.Where(x => x.ParentType == null).OrderBy(x => x.Priority).ToObservableCollection();
             _umsView.CloseMe += CloseView;
             _pmsView.CloseMe += CloseView;
         }
@@ -41,6 +40,8 @@ namespace BackOffice.Views
 
         private IEnumerable<OfficeModule> CreateModulesCollection()
         {
+            var container = ServiceLocator.Current.GetInstance<IUnityContainer>();
+            var modules = container.ResolveAll<IOfficeModule>();
             yield return
                 new OfficeModule()
                 {

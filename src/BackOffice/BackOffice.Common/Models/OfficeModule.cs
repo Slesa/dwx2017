@@ -2,7 +2,7 @@
 
 namespace BackOffice.Common.Models
 {
-    public class OfficeModule 
+    public class OfficeModule : IOfficeModule
     {
         public string Title { get; set; }
         public string Tooltip { get; set; }

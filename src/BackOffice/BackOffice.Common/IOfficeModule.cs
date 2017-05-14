@@ -5,13 +5,12 @@ namespace BackOffice.Common
 {
     public interface IOfficeModule
     {
-        string Title { get; }
-        string Description { get; }
-        string ToolTip { get; }
-        string IconFileName { get; }
-        int Priority { get; }
-        Uri TargetUri { get; }
-        Type ParentType { get; }
-        IEnumerable<string> Keywords { get; }
+        string Title { get;  }
+        string Tooltip { get; }
+        string IconFile { get; }
+        //int Priority { get; }
+        //Uri TargetUri { get; }
+        //Type ParentType { get; }
+        //IEnumerable<string> Keywords { get; }
     }
 }
