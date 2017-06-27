@@ -6,6 +6,12 @@
 
 ***
 
+### Die Mikado-Methode
+
+![Bild](images/Mikado.jpg)
+
+***
+
 ### Vorstellung
 
 ![Bild](images/Foto.jpg)
@@ -14,8 +20,8 @@
 - Twitter: @joergpreiss
 - Interessensgebiete: Sprachen, Architektur
 
-' Programmiert seit 25 Jahren
-' Pascal, C, C++, C#, F#, Java, Prolog
+' - Programmiert seit 25 Jahren
+' - Mischen von C#, F#, Java, Prolog
 
 
 ***
@@ -27,8 +33,10 @@
 
 - von Ona Ellnestam, Daniel Brolund
 - Artikel von Stefan Lieser
-- Wie richte ich ein Zimmer neu ein, während eine darin Party läuft?
+- Wie renoviere ich eine Wohnung, während darin eine Party läuft?
 
+' - Frage ob bekannt!
+' - Kurzer Theorieblock, um alle abzuholen
 
 ***
 
@@ -37,11 +45,13 @@
 ![Mikado-Graph](images/MikadoGraph.png)
 
 - Man beginnt mit einem Ziel
-- Für jedes Ziel Voraussetzungen bestimmen
+- Für Ziel Voraussetzungen bestimmen
 - Rekursiv für alle Voraussetzungen weitermachen
 
-' Ziel muss messbar, erreichbar sein
-' Knoten ohne Voraussetzungen sind Blätter
+' - Ziel muss messbar, erreichbar sein
+' - Knoten ohne Voraussetzungen sind Blätter
+' - Visualisierung digital oder analog
+' - Umsetzung bei Blättern beginnen
 
 ***
 
@@ -54,23 +64,25 @@
 - Beobachtung der Auswirkungen
 
 ' Man experimentiert also
-' hilfreich: Unit-Tests
-' Genau das was man täglich macht
+' 1. Indikator: Compiler
+' 2. Indikator: Unit-Tests
+' Bei jedem Durchlauf bisheriges Ergebnis löschen!
 
 ***
 
-### Für wen ist es?
+### Wann setzt man es ein?
 
 ![Scheunenfund](images/scheunenfund.jpg)
 
-- Neu in einer Firma angefangen
-- Alten Code von vor 2 Jahren überarbeiten
-- Allgemein: bei allen Strukturierungsmaßnahmen
+- Neuen Code kennenlernen
+- Alten Code überarbeiten
+- Neue Technologien benutzen
+- Allgemein: bei Umstrukturierungen
 
 
-' Shell von Abhängigkeiten befreien, aber Release steht bevor
-' Wem sein alter Code noch gefällt, hat zu wenig gelernt
-' Aspekt der Dokumentation
+' - Shell von Abhängigkeiten befreien, aber Release steht bevor
+' - Wem sein alter Code noch gefällt, hat zu wenig gelernt
+' - Aspekt der Dokumentation
 
 
 ***
@@ -80,7 +92,7 @@
 ![Externes Gedächtnis](images/ExternesMemory.jpg)
 
 - Mikado-Graph ist ausgelagertes Gedächtnis
-- Kann als Dkumentation benutzt werden
+- Kann als Dokumentation benutzt werden
 - Änderungen jederzeit durchführbar/nachvollziehbar
 
 
@@ -102,7 +114,48 @@
 
 ***
 
-![Coding Time](images/CodingTime.jpg)
+
+### Gezeigtes Beispiel
+
+![Sprachverwirrung](images/sprachverwirrung.jpg)
+
+- Prism: Framework für WPF 
+- Unity: IoC-Container von Prism
+- Codeänderung nicht wirklich relevant
+
+' Projekt zeigen
+' Wer ist für Neuentwicklung?
+
+***
+
+![Demo Time](images/CodingTime.jpg)
+
+***
+
+### Auswirkungen
+
+![Nachdenken](images/nachdenken.jpg)
+
+- Trennung von Denk- und Umsetzungszeit
+- Umsetzungszeit nur ein Bruchteil
+- Größter Teil ist Forschung
+
+' - Mit der Gummiente reden
+' - weiterer Aspekt: Abschätzungen genauer
+
+***
+
+### Alles wegwerfen?
+
+![Entsorgung](images/entsorgung.jpg)
+
+- Sorgfältig vorgehen
+- Codesnippets erzeugen
+- Batches/Skripte verwenden
+
+' Pragmatisch vorgehen aber sorgfältig auswählen
+' Keine strukturellen Änderungen einchecken
+
 
 ***
 
@@ -110,9 +163,12 @@
 
 ![Renovierung](images/Renovierung.jpg)
 
-- Zimmer nicht neu eingerichtet
+- Wohnung nicht neu eingerichtet
 - Aber bereits alle Möbel davor
 - Alles bereit zur Umsetzung
+
+' Build kann nicht gebrochen werden
+' Dennoch: Integrationstests wichtig
 
 ***
 
@@ -125,6 +181,25 @@
 - roter Faden zur weiteren Entwicklung
 
 ' wer den Weg nicht kennt, kann das Ziel nicht finden
+
+***
+
+### Anwendungsfall
+
+![Konfiguraton](images/konfiguration.png)
+
+Bei der Installation von OS/Programmen:
+Weg zur aktuellen Konfiguration aufzeichnen
+
+' Weniger Probleme bei Update
+' Keine strukturellen Änderungen einchecken
+
+
+***
+
+### Fragen?
+
+![Fragen](images/fragen.jpg)
 
 ***
 
