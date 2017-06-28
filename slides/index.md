@@ -22,6 +22,8 @@
 
 ' - Programmiert seit 25 Jahren
 ' - Mischen von C#, F#, Java, Prolog
+' - Marco Heimeshoff, DDD
+' - Michael Plöd, Microservices
 
 
 ***
@@ -52,6 +54,7 @@
 ' - Knoten ohne Voraussetzungen sind Blätter
 ' - Visualisierung digital oder analog
 ' - Umsetzung bei Blättern beginnen
+' - Einziges Artefakt!
 
 ***
 
@@ -66,6 +69,7 @@
 ' Man experimentiert also
 ' 1. Indikator: Compiler
 ' 2. Indikator: Unit-Tests
+' 3. Indikator: Manuelles Testen
 ' Bei jedem Durchlauf bisheriges Ergebnis löschen!
 
 ***
@@ -76,13 +80,13 @@
 
 - Neuen Code kennenlernen
 - Alten Code überarbeiten
-- Neue Technologien benutzen
+- Neue Technologien ausprobieren
 - Allgemein: bei Umstrukturierungen
 
 
+' - Hendrik Lösch, Refactoring
 ' - Shell von Abhängigkeiten befreien, aber Release steht bevor
 ' - Wem sein alter Code noch gefällt, hat zu wenig gelernt
-' - Aspekt der Dokumentation
 
 
 ***
@@ -191,8 +195,8 @@
 Bei der Installation von OS/Programmen:
 Weg zur aktuellen Konfiguration aufzeichnen
 
-' Weniger Probleme bei Update
-' Keine strukturellen Änderungen einchecken
+' Pragmatisch einsetzen
+' Nur ein weiteres Tool in Werkzeugkasten
 
 
 ***
